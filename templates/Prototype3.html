@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<!--  This source code is exported from pxCode, you can get more document from https://www.pxcode.io  -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/fonts.css" />
+    <link rel="stylesheet" href="../static/css/dynamic.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/Prototype3.css" />
+    <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+
+</head>
+
+<!-- function for refreshing is given along with body -->
+<body style="display: flex; flex-direction: column" >
+    <div class="prototype3 group layout">
+        <div class="flex layout8">
+            <div class="flex layout1">
+                <div class="flex layout1">
+                    <div class="rect layout"></div>
+                    <div class="flex1 layout1">
+                        <div class="group1 layout1">
+                            <div class="group2 layout">
+                                <div class="group1 layout">
+                                    <div class="txt_box layout">
+                                        <div class="txt"><span class="txt_span0">THERMO</span><span class="txt_span1">TRAK</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <div class="contain_block10 layout">
+                            <div class="flex1 layout">
+                                <div class="flex layout">
+                                    <img src="../static/assets/c37fd2aed2add08693c5df2b657a83b4.png" alt="" class="img layout" />
+                                    <div class="txt1 layout">kg</div>
+                                </div>
+                                <div class="spacer1"></div>
+                                <div class="txt2 layout" id="weight-input">
+                                    <form id = "myform" method = "POST">
+                                        <input type="number" value={{weight_py}} min="50" max="100" step="1.0" name="weight" id="input-bar-weight" onchange="this.form.submit()">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container1 layout">
+                    <div class="flex1 layout2">
+                        <div class="contain_block4 layout">
+                            <div class="flex layout2">
+                                <div class="contain_block3 layout">
+                                    <div class="txt3 layout">Core</div>
+                                </div>
+                                <div class="group1 layout2">
+                                    <div class="txt4 layout" id="core-temp">0</div>
+                                    <div class="txt5 layout">oC</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spacer2"></div>
+                        <div class="contain_block4 layout">
+                            <div class="flex layout2">
+                                <div class="contain_block3 layout">
+                                    <div class="txt3 layout1">Skin</div>
+                                </div>
+                                <div class="group1 layout3">
+                                    <div class="txt4 layout" id="skin-temp">0</div>
+                                    <div class="txt5 layout">oC</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex layout7">
+                <div class="container layout">
+                    <div class="contain_block101 layout"></div>
+                    <div class="contain_block102 layout">
+                        <div class="txt3 layout2">Heat Stress</div>
+                    </div>
+                    <div class="container9 layout">
+                        <div class="container8 layout">
+                            <div class="container4 layout">
+                                <div class="container7 layout">
+                                    <div class="container3 layout">
+                                        <div class="container5 layout">
+                                            <div class="container6 layout">
+                                                <div class="contain_block103 layout">
+                                                    <div class="rect1 layout"><div id="percentage-indictor" ></div></div>
+                                                    <hr size="1" class="rect2 layout" />
+                                                    <div style="--src:url(../assets/c46e0d24c885f33e287eac91a62fed18.png)" class="img1 layout"></div>
+                                                    <div class="group1 layout4">
+                                                    <div class="txt6 layout" id="kcal-value">0</div>
+                                                        <div class="txt7 layout">kcal</div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex layout3">
+                                                    <div class="group1 layout5">
+                                                        <div class="group1 layout">
+                                                            <div class="group1 layout">
+                                                                <div class="group1 layout">
+                                                                    <div class="txt8 layout" id="HS-value">0</div>
+                                                                    <hr size="1" class="rect2 layout1" />
+                                                                </div>
+                                                                <hr size="1" class="rect2 layout2" />
+                                                            </div>
+                                                            <div class="txt9 layout">HS</div>
+                                                        </div>
+                                                        <div class="txt10 layout">%</div>
+                                                    </div>
+                                                    <div class="group1 layout6">
+                                                        <div class="group1 layout">
+                                                            <div class="txt2 layout1" id="maxHS-value">0</div>
+                                                            <div class="txt9 layout1">maxHS</div>
+                                                        </div>
+                                                        <div class="txt7 layout">kcal</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex layout6">
+                    <div class="container3 layout1">
+                        <div class="contain_block9 layout">
+                            <div class="flex layout5">
+                                <div class="contain_block8 layout">
+                                    <div class="txt3 layout3">Heat Stress Prediction</div>
+                                </div>
+                                <div class="flex layout4">
+                                    <div class="contain_block7 layout" id = "color_change_container">
+                                        <div class="txt3 layout4" id="msg-to-display">maxHS in</div>
+                                    </div>
+                                    <div class="group1 layout7">
+                                        <div class="txt11 layout" id="time-value">0</div>
+                                        <div class="txt5 layout1" id = "min">minutes</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex1 layout3">
+                        <!-- <img src="./assets/4e0c8e771319349bef15def3034146bd.png" alt="" class="img layout1" /> -->
+                        <div class="list-read"></div>
+                        <div class="spacer3"></div>
+                        <div class="list-read"></div>
+                        <!-- <img src="./assets/17334044f011212dcfad7311995c35a6.png" alt="" class="img layout1" /> -->
+                        <div class="spacer3"></div>
+                        <div class="list-read"></div>
+                        <!-- <img src="./assets/db2c43931e8e1f83a32063c1f7f28e42.png" alt="" class="img layout1" /> -->
+                        <div class="spacer3"></div>
+                        <div class="list-read"></div>
+                        <!-- <img src="./assets/db2c43931e8e1f83a32063c1f7f28e42.png" alt="" class="img layout1" /> -->
+                        <div class="spacer3"></div>
+                        <div class="list-read"></div>
+                        <!-- <img src="./assets/db2c43931e8e1f83a32063c1f7f28e42.png" alt="" class="img layout1" /> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div height = "0" width = "0" id = "recovery">{{recovery}}</div>
+        <div height = "0" width = "0" id = "flags">{{flags}}</div>
+    </div>
+    <script type="text/javascript">
+        AOS.init();
+    </script>
+    <script type = "text/javascript" charset = "utf-8">
+        console.log('in');
+        coreTemp=document.getElementById('core-temp');
+skinTemp=document.getElementById('skin-temp');
+HSValue=document.getElementById('HS-value');
+maxHSvalue=document.getElementById('maxHS-value');
+kcalValue=document.getElementById('kcal-value');
+mesg=document.getElementById('msg-to-display');
+minute_dis = document.getElementById('min');
+time=document.getElementById('time-value');
+statIndicator=document.getElementsByClassName('list-read');
+battery_view=document.getElementById('percentage-indictor');
+container = document.getElementById('color_change_container');
+weight = document.getElementById('input-bar-weight');
+ document.getElementById("recovery").style.display = "none";
+ document.getElementById("flags").style.display = "none";
+
+            //check for Navigation Timing API support
+if (window.performance) {
+  console.info("window.performance works fine on this browser");
+}
+console.info(performance.navigation.type);
+if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+  console.info( "This page is reloaded" );
+} else {
+  console.info( "This page is not reloaded");
+}
+
+          $(document).ready(function() {
+            // Connect to the Socket.IO server.
+            // The connection URL has the following format, relative to the current page:
+            //     http[s]://<domain>:<port>[/<namespace>]
+            var socket = io();
+            console.log('connect');
+             socket.on('connect', function() {
+                console.log('HI');
+                socket.emit('my_event', {data: 'I\' am connected'});
+             });
+
+            socket.on('my_response', function(msg, cb) {
+               if (cb)
+                    cb();
+            });
+
+           // $('form#myform').submit(function(event) {
+           //     console.log(weight);
+           //      socket.emit('test_message', {weight_value : document.getElementById('input-bar-weight').textContent});
+           //     return false;
+            // });
+
+            socket.on('updater', function(msg) {
+                console.log('inside updater');
+                //console.log(coretemp);
+                coreTemp.textContent = msg.core_temp;
+                skinTemp.innerHTML = msg.skin_temp;
+                maxHSvalue.innerHTML = msg.max_HS;
+                HSValue.innerHTML = msg.Stor_body;
+               kcalValue.innerHTML = msg.kcal_value;
+                document.getElementById('recovery').innerHTML = msg.recovery;
+                time.innerHTML = msg.time_value;
+                document.getElementById('flags').innerHTML = msg.flags;
+                percentage = HSValue.innerHTML
+     height=parseInt(((parseInt(percentage))*206/100))+'px'
+     console.log(height)
+     battery_view.style.height=height
+
+     list_color=['#de6d6d','#99ba64','#d9d9d9']
+     var recovery = document.getElementById('recovery').innerHTML
+     //console.log(recovery)
+     if (recovery==0) {
+        container.style.backgroundColor = list_color[0];
+         mesg.innerHTML='maxHS in'
+     }else if (recovery==1) {
+         container.style.backgroundColor = list_color[1];
+         mesg.innerHTML='Recovery in'
+     }
+     else{
+         container.style.backgroundColor = list_color[1];
+         mesg.innerHTML='No stress'
+         minute_dis.style.display = "none"
+         time.style.display = "none"
+     }
+
+     var sensor_flags = document.getElementById('flags').innerHTML
+     for (var i = 0; i < statIndicator.length; i++) {
+        //console.log(sensor_flags[i])
+         if(sensor_flags[i]=='0'){
+            statIndicator[i].style.backgroundColor = list_color[0]
+         }
+         else if(sensor_flags[i] == '1'){
+            statIndicator[i].style.backgroundColor = list_color[1]
+         }
+     }
+            })
+        });
+    </script>
+    <!--<script src="../static/js/main.js"></script>-->
+</body>
+
+</html>

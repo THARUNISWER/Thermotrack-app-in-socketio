@@ -1,0 +1,23 @@
+#input-bar-weight{
+    background: transparent;
+    border: none;
+    padding: auto;
+    text-align: center;
+    font-size: large;
+    width: fit-content;
+}
+.list-read{
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    background-color: antiquewhite;
+}
+#percentage-indictor{
+    width: 120px;
+    height: 124px; /*100 percent=== 206px*/
+    border-radius: 5px;
+    background-color: #de6d6d;
+    transition: height 2s;
+    position: absolute;
+    bottom: 0;
+}
